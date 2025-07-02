@@ -124,6 +124,12 @@ You will need the OpenAI API for all the agents.
 export OPENAI_API_KEY=$YOUR_OPENAI_API_KEY
 ```
 
+The framework stores cached market data locally. You can override the default
+`./data` directory by setting the `TRADINGAGENTS_DATA_DIR` environment variable:
+```bash
+export TRADINGAGENTS_DATA_DIR=/path/to/your/data
+```
+
 ### CLI Usage
 
 You can also try out the CLI directly by running:
@@ -191,6 +197,18 @@ print(decision)
 > For `online_tools`, we recommend enabling them for experimentation, as they provide access to real-time data. The agents' offline tools rely on cached data from our **Tauric TradingDB**, a curated dataset we use for backtesting. We're currently in the process of refining this dataset, and we plan to release it soon alongside our upcoming projects. Stay tuned!
 
 You can view the full list of configurations in `tradingagents/default_config.py`.
+
+### Running Tests
+
+After installing the dependencies, you can run the unit tests with `pytest`:
+```bash
+pytest
+```
+
+### Notes
+
+- The risk management module file `aggressive_debator.py` was previously misspelled
+  as `aggresive_debator.py`. Imports have been updated accordingly.
 
 ## Contributing
 
